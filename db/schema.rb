@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_25_021606) do
+ActiveRecord::Schema.define(version: 2020_05_25_190211) do
 
   create_table "foods", force: :cascade do |t|
     t.string "name"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2020_05_25_021606) do
 
   create_table "reviews", force: :cascade do |t|
     t.string "date"
-    t.integer "like"
+    t.integer "rating"
     t.string "comment"
     t.integer "user_id"
     t.integer "restaurant_id"
@@ -47,9 +47,9 @@ ActiveRecord::Schema.define(version: 2020_05_25_021606) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "user_name"
-    t.string "password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "password_digest"
   end
 
 end
