@@ -1,6 +1,6 @@
 
 
-<%= form_for @user, controller: 'users', action: 'create' do |f| %>
+<%= form_with model: @user do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
 

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   root 'welcome#home'
 
-  resources :users, only: [:new, :create]
+  resources :users
   resources :reviews
   resources :restaurants
   resources :locations
