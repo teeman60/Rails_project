@@ -1,0 +1,4 @@
+<h3> Restaurant Locations: </h3>
+<% @locations.each do |l|%>
+    <%= link_to l.address, location_path(l) %><br>
+<%end%>

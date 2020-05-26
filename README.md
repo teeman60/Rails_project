@@ -20,7 +20,7 @@ This Yelp Clone will have the following functionalities:
 
 - Users should be able to select restaurants when creating their page
 
-- Users should be able to select food when creating their page
+- Users should be able to select food
 
 - Users should be able to leave a comment about a restaurant 
 
