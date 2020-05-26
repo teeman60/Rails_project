@@ -6,6 +6,5 @@ class User < ApplicationRecord
 
     validates :name, uniqueness: true
     validates :age, numericality: {only_integer: true, greater_than: 14}
-    # validates :user, uniqueness: {scope: :review_id}
     
 end
