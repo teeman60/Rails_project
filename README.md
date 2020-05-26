@@ -36,7 +36,7 @@ This Yelp Clone will have the following functionalities:
 # LOCATION
 - A location should link to only one restaurant
 
-- Users should be able to find store location from store show page
+- Users should be able to find restaurant location from restaurant show page
 
 # RESTAURANT
 - Restaurant's show page should find the resatuant name

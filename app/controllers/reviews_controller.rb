@@ -1,19 +1,26 @@
 class ReviewsController < ApplicationController
-    before_action :current_view, only: [:show, :edit, :update, :destory]
+    before_action :current_review, only: [:show, :edit, :update, :destory]
 
+
+    def index
+        @reviews = Review.all
+    end
+    
     def new
         @review = Review.new
+        @users = User.all
         @restautants = Restaurant.all 
         @locations = Location.all
     end
 
     def create
         @review = Review.new(review_params)
-        if @review.save
-          redirect_to @review
+        if @review.valid?
+            @review.save
+            redirect_to @review
         else
-          flash[:errors] = "Something went wrong"
-          redirect_to new_review_path
+            flash[:errors] = @review.errors.full_messages
+            redirect_to new_review_path
         end
     end
     
@@ -23,7 +30,7 @@ class ReviewsController < ApplicationController
     private
 
     def review_params
-        params.require(:review).permit(:date, :rating, :comment, :user_id, :request_id)
+        params.require(:review).permit(:date, :rating, :comment, :user_id, :restaurant_id)
     end
     
     def current_review
