@@ -1,0 +1,19 @@
+<%if flash[:errors]%>
+    <%flash[:errors].each do |e|%>
+        <li style="color :red"><%=e%></li>
+    <%end%>
+<% end%>
+
+<%=form_with model: @review do |f|%>
+    <%=f.label :Restaurant_Name%>
+    <%=f.collection_select :restaurant_id, @restautants, :id, :name%>
+    <%=f.label :Location%>
+    <%=f.collection_select :location_id, @locations, :id, :address%> <br><br>
+    <%=f.label :Rating%>
+    <%=f.number_field :rating%> <br><br>
+    <%=f.label :Date_of_visit%>
+    <%=f.text_field :date%> <br><br>
+    <%=f.label :comment%>
+    <%=f.text_area :comment%> <br><br>
+<%=f.submit%>
+<%end%>

@@ -1,0 +1,5 @@
+<h3>Restaurant Location</h3>
+<% @location.restaurants.each do |rest|%>
+    <%= rest.name%>
+    <%= rest.location.address%>
+<% end %>

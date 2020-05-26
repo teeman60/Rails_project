@@ -23,13 +23,5 @@
   <%= f.label :age %>
   <%= f.number_field :age %>
 <br>
-<h3> Choose A Your Location:</h3>
-<%= form_with model: @location do |f|%>
-<%= f.collection_select :location_id, @locations, :id, :address %>
-<%end%>
-
-<h3>Choose A Restaurant From Your Location</h3>
-<%= form_with model: @restaurant do |f|%>
-
   <%= f.submit "create" %>
 <% end %>
