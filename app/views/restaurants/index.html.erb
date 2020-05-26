@@ -1,3 +1,6 @@
-<h1>Hi, <%= @user.name %>, welcome to your YELP app </h1>
+<h3>Hi, <%= @user.name %>, welcome to your YELP app </h3>
 
 <h3>List Of Restaurants:</h3>
+<% @restaurants.each do |r|%>
+<%= link_to r.name, restaurant_path(r)%><br>
+<%end%>

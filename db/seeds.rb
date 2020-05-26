@@ -13,6 +13,8 @@ Food.destroy_all
 Restaurant.destroy_all
 Location.destroy_all
 
+
+
 u1 = User.create(name: "Name 1", user_name: "User1", age: 17, password_digest: "yugjubikuyyuytd")
 u2 = User.create(name: "Name 2", user_name: "User2", age: 17, password_digest: "yugjubikuyyuytd")
 u3 = User.create(name: "Name 3", user_name: "User3", age: 17, password_digest: "yugjubikuyyuytd")
@@ -33,12 +35,18 @@ f4 = Food.create(name:"Food4", food_info: "Food_info4", image_url: "https://hips
 f5 = Food.create(name:"Food5", food_info: "Food_info5", image_url: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-brie-brussels-sprouts-bites-pinterest-still002-1541098432.jpg?crop=1.00xw:0.668xh;0,0.120xh&resize=768:*", restaurant: r2)
 
 
-l1 = Location.create(address: "Location1", restaurant: r1)
-l1 = Location.create(address: "Location2", restaurant: r2)
-l1 = Location.create(address: "Location3", restaurant: r3)
+l1 = Location.create(address: "Miami", restaurant: r1)
+l1 = Location.create(address: "San Francisco", restaurant: r2)
+l1 = Location.create(address: "Atlanta", restaurant: r3)
 
 
-Review.create!(date: "01-15-2020", rating: 1, comment: "This is a good place to eat", user: u1, restaurant: r1)
-Review.create(date: "04-03-2020", rating: 1, comment: "I love their salad and brocolli. Super awesome", user: u2, restaurant: r1)
-Review.create(date: "03-25-2020", rating: 1, comment: "100% recommend. This is an amazing spot", user: u3, restaurant: r1)
-Review.create(date: "05-15-2020", rating: 1, comment: "I like to always come to this awesome place", user: u4, restaurant: r1)
+Review.create(date: "01-15-2020", rating: 1, comment: "This is a good place to eat", user: u1, restaurant: r1)
+Review.create(date: "04-03-2020", rating: 1, comment: "I love their salad and brocolli. Super awesome", user: u2, restaurant: r2)
+Review.create(date: "03-25-2020", rating: 1, comment: "100% recommend. This is an amazing spot", user: u3, restaurant: r3)
+Review.create(date: "05-15-2020", rating: 1, comment: "I like to always come to this awesome place", user: u4, restaurant: r2)
+
+
+
+
+
+

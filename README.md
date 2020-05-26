@@ -39,7 +39,7 @@ This Yelp Clone will have the following functionalities:
 - Users should be able to find restaurant location from restaurant show page
 
 # RESTAURANT
-- Restaurant's show page should find the resatuant name
+- Restaurant's show page should find the restaurant's name
 
 - Restaurant's show page should have the restaurant's average rating and a link to the reviews made about it
 
