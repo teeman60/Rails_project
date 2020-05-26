@@ -10,10 +10,9 @@ class ReviewsController < ApplicationController
     def create
         @review = Review.new(review_params)
         if @review.save
-          flash[:success] = "Object successfully created"
           redirect_to @review
         else
-          flash[:error] = "Something went wrong"
+          flash[:errors] = "Something went wrong"
           redirect_to new_review_path
         end
     end
