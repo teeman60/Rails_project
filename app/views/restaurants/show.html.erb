@@ -1,1 +1,12 @@
-<h1>rest Show</h1>
+<h3>Restaurant's Info</h3>
+<h4>Location:</h4>
+<%= @restaurant.location.address%><br>
+<h4> Name:</h4>
+<%= @restaurant.name%><br>
+<h4> Average Rating:</h4>
+<%= @restaurant.reviews.average(:rating).to_i%><br>
+<br>
+
+
+
+<%= link_to "Reviews", reviews_path%>

@@ -1,6 +1,9 @@
 class ReviewsController < ApplicationController
     before_action :current_view, only: [:show, :edit, :update, :destory]
 
+    def index
+        @reviews = Review.all
+    end
     def new
         @review = Review.new
         @restautants = Restaurant.all 
