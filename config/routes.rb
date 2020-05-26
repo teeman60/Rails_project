@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   resources :reviews
   resources :restaurants
   resources :locations
-  resources :food
+  resources :foods
 
 end

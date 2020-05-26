@@ -26,14 +26,6 @@ class UsersController < ApplicationController
         @user = current_user
     end
 
-    def edit
-
-    end
-
-    def update
-
-    end
-
     def current_user
         @user = User.find(session[:user_id])
     end
