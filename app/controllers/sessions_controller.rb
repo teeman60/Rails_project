@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+
+    skip_before_action :authenticated, only: [:new, :create]
     
     def new
     end
@@ -23,7 +25,7 @@ class SessionsController < ApplicationController
     def destroy
         session.delete :user_id
 
-        redirect_to controller: 'home', action: 'goodbye'
+        redirect_to controller: 'sessions', action: 'new'
     end
 
 end

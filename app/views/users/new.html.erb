@@ -1,4 +1,10 @@
-
+<% if flash[:errors]%>
+    <% flash[:errors].each do |e| %>
+        <li style="color: purple">
+            <%= e %>
+        </li>
+        <%end%>
+<%end%>
 
 <%= form_with model: @user do |f| %>
   <%= f.label :name %>
@@ -12,6 +18,10 @@
 
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
+
+  <%= f.label :age %>
+  <%= f.number_field :age %>
+
 
   <%= f.submit "create" %>
 <% end %>

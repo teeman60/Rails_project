@@ -7,9 +7,9 @@ This Yelp Clone will have the following functionalities:
 
 - Users should be authenticated upon subsequent login attempts
 
-- Users should be able to select restaurants and food types they like (checkboxes) when creating their page
+- Users should be able to select restaurants they like (checkboxes) when creating their page
 
-- Users should be able to leave a review about a restaurant 
+- Users should be able to leave a comment about a restaurant 
 
 - Users should be able to leave a rating
 
@@ -18,7 +18,7 @@ This Yelp Clone will have the following functionalities:
 - Users should be able to get store location from store show page
 
 # USERS VALIDATION
-- Users can only open 1 account (user_name must be unique)
+- Users can only open 1 account (name must be unique)
 
 - Users can only leave one review per restaurant
 
@@ -34,5 +34,11 @@ This Yelp Clone will have the following functionalities:
 # RESTAURANT
 - Restaurant's show page should have the restaurant's average rating and a link to the reviews made about it
 
+- Restaurants should have a link to the list of their food
+
+- Restaurant should be able to add to their food list
+
 # LOCATION
+- Location should display addresses of restaurants
+
 - A location should link to only one restaurant
