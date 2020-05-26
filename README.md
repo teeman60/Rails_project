@@ -3,7 +3,7 @@
 This Yelp Clone will have the following functionalities: 
 
 # USERS VALIDATION
-- Users can only open 1 account (user_name must be unique)
+- Users can only open 1 account (name must be unique)
 
 - Users can only leave one review per restaurant
 

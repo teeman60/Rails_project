@@ -4,6 +4,8 @@ class UsersController < ApplicationController
 
     def new
         @user = User.new
+        @restaurants = Restaurant.all
+        @locations = Location.all
     end
 
     def create
