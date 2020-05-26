@@ -27,10 +27,11 @@ r3 = Restaurant.create(name: "Wingstop")
 
 
 f1 = Food.create(name:"Food1", food_info: "Food_info1", image_url: "image1", restaurant: r1)
-f2 = Food.create(name:"Food2", food_info: "Food_info2", image_url: "image2", restaurant: r1)
-f3 = Food.create(name:"Food3", food_info: "Food_info3", image_url: "image3", restaurant: r1)
-f4 = Food.create(name:"Food4", food_info: "Food_info4", image_url: "image4", restaurant: r1)
-f5 = Food.create(name:"Food5", food_info: "Food_info5", image_url: "image5", restaurant: r1)
+f2 = Food.create(name:"Food2", food_info: "Food_info2", image_url: "image2", restaurant: r2)
+f3 = Food.create(name:"Food3", food_info: "Food_info3", image_url: "image3", restaurant: r3)
+f4 = Food.create(name:"Food4", food_info: "Food_info4", image_url: "image4", restaurant: r3)
+f5 = Food.create(name:"Food5", food_info: "Food_info5", image_url: "image5", restaurant: r2)
+
 
 l1 = Location.create(address: "Location1", restaurant: r1)
 l1 = Location.create(address: "Location2", restaurant: r2)

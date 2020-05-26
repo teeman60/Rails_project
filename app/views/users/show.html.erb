@@ -1,7 +1,10 @@
 <p> Hi, <%= @user.name %></p>
 
 
-
 <%= form_with url: '/logout', method: "delete" do |f|%>
 <%= f.submit "Logout"%>
+
+<%= link_to "Restaurant",  restaurant_path%>
+<%= link_to " Create Review",  new_review_path%>
+<%= link_to " Restaurant Review",  reviews_path%>
 <%end%>

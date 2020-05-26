@@ -5,5 +5,10 @@ class RestaurantsController < ApplicationController
         # @restaurants = Restaurant.all
     end
 
+    def show
+        @user = User.find(params[:id])
+        @restaurant = Restaurant.find(params[:id])
+    end
+
 
 end
