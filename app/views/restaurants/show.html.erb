@@ -1,6 +1,6 @@
 <h3>Restaurant's Info</h3>
 <h4>Location:</h4>
-<%= @restaurant.location.address%><br>
+<%= link_to @restaurant.location.address, location_path(@restaurant.location)%><br>
 <h4> Name:</h4>
 <%= @restaurant.name%><br>
 <h4> Average Rating:</h4>
@@ -8,5 +8,3 @@
 <br>
 
 
-
-<%= link_to "Reviews", reviews_path%>

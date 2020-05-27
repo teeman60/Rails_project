@@ -27,14 +27,17 @@ class ReviewsController < ApplicationController
     def show
     end
 
+    def current_review
+        @review = Review.find(params[:id])
+    end
+   
+
     private
 
     def review_params
         params.require(:review).permit(:date, :rating, :comment, :user_id, :restaurant_id)
     end
     
-    def current_review
-        @review = Review.find(params[:id])
-    end
+   
 
 end
