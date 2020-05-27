@@ -1,6 +1,14 @@
+<% if flash[:errors]%>
+    <% flash[:errors].each do |e| %>
+        <li style="color: red">
+            <%= e %>
+        </li>
+        <%end%>
+<%end%>
+
 <h3>Tell Us Your Experience about Restaurant</h3>
 <%=form_with model: @review do |f|%>
-    <%=f.text_field :user_id%>
+    <%f.text_field :user_id%>
     <%=f.label :Date_of_visit%>
     <%=f.date_field :date%> <br><br>
     <%=f.label :Restaurant_Name%>
@@ -8,15 +16,7 @@
     <%=f.label :comment%> <br>
     <%=f.text_area :comment, cols: 50, rows: 10%> <br><br>
     <%=f.label :Rating%>
-    <%=f.label 'Rating', '1' %>
-    <%=f.radio_button :rating, 1 %>
-    <%=f.label 'Rating', '2' %>
-    <%=f.radio_button :rating, 2 %>
-    <%=f.label 'Rating', '3' %>
-    <%=f.radio_button :rating, 3 %>
-    <%=f.label 'Rating', '4' %>
-    <%=f.radio_button :rating, 4 %>
-    <%=f.label 'Rating', '5' %>
-    <%=f.radio_button :rating, 5 %> <br><br>
+    <%=f.number_field :rating%> <br><br>
+
 <%=f.submit%>
 <%end%>

@@ -67,5 +67,3 @@ This Yelp Clone will have the following functionalities:
 - Users should be able to leave a restaurant's date of visit
 
 - Users should be able to give a rating
-
-

@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
-    skip_before_action :authenticated, only: [:new, :create]
+    # skip_before_action :authenticated, only: [:new, :create]
     before_action :current_review, only: [:show, :edit, :update, :destory]
+    before_action :current_user, only: [:create]
 
 
     def index
@@ -16,7 +17,7 @@ class ReviewsController < ApplicationController
 
     def create
         @review = Review.new(review_params.merge(user_id: @user.id))
-        byebug
+        # byebug
         if @review.valid?
             @review.save
             redirect_to @review

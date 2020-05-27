@@ -58,8 +58,3 @@ Review.create(date: "03-25-2020", rating: 5, comment: "100% recommend. This is a
 Review.create(date: "05-15-2020", rating: 4, comment: "I like to always come to this awesome place", user: u3, restaurant: r2)
 Review.create(date: "05-15-2020", rating: 4, comment: "I like to always come to this awesome place", user: u3, restaurant: r1)
 
-
-
-
-
-
