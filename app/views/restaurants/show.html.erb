@@ -6,6 +6,11 @@
 <h4> Average Rating:</h4>
 <%= @restaurant.reviews.average(:rating).to_i%><br>
 <br>
+
+<h4> Menu <h4>
+<% @restaurant.foods.each do |f|%>
+<%= link_to f.name, food_path(f)%><br>
+<%end%>
 <h3>Comments about Restaurant</h3>
 <%@restaurant.reviews.each do |rev|%>
 <%= link_to rev.comment, review_path(rev)%> <br>

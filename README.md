@@ -43,9 +43,9 @@ This Yelp Clone will have the following functionalities:
 
 - Restaurant's show page should have the restaurant's average rating and a link to the reviews made about it
 
-- Restaurant's show page should have the restaurant's location a link to the location show page
+- Restaurant's show page should have the restaurant's location and a link to the location show page
 
-- Restaurant's show page should have the restaurant's menu a link to the food show page
+- Restaurant's show page should have the restaurant's menu and a link to the food show page
 
 # Review
 - Review show page should be able to find reviewers(User name)
