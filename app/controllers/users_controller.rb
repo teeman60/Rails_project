@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-    skip_before_action :authenticated, only: [:new, :create]
+    skip_before_action :authenticated, only: [:new, :create, :edit, :update]
 
     def new
         @user = User.new
@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     def create
         # byebug
         @user = User.new(user_params)
+        
         if @user.valid?
             @user.save
             redirect_to @user
@@ -19,6 +20,22 @@ class UsersController < ApplicationController
             redirect_to new_user_path
         end
               
+    end
+
+    def edit
+        @user = current_user
+    end
+
+
+    def update
+        @user = current_user
+        if @user.update(user_params)
+            redirect_to user_path(@user)
+        else
+            flash[:errors] = @user.errors.full_messages
+            redirect_to edit_post_path
+        end
+
     end
 
     def show

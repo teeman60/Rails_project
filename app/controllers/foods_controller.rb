@@ -13,6 +13,7 @@ class FoodsController < ApplicationController
     end
 
     def create
+       
         @food = Food.new(food_params)
         if @food.valid?
             @food.save
