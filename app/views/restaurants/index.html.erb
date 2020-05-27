@@ -4,3 +4,5 @@
 <% @restaurants.each do |r|%>
 <%= link_to r.name, restaurant_path(r)%><br>
 <%end%>
+
+<%= link_to " Go Back",  user_path(@user)%> <br>

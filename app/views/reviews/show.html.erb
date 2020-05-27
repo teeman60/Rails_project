@@ -4,3 +4,5 @@
     <h5>Date of Visit : <%=@review.date%> </h5>
     <h5>Restaurant Rating : <%=@review.rating%> </h5>
     <h5>Comment : <%=@review.comment%> </h5>
+
+<%= link_to " Go Back",  restaurant_path(@review.restaurant)%> <br>

@@ -10,7 +10,7 @@ class RestaurantsController < ApplicationController
         # @user = User.find(params[:id])
         @restaurant = Restaurant.find(params[:id])
         @locations = Location.all
-        @review = Review.find(params[:id])
+        @reviews = Review.all
     end
 
 

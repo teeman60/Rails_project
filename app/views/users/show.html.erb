@@ -2,9 +2,12 @@
 
 
 <%= form_with url: '/logout', method: "delete" do |f|%>
-<%= f.submit "Logout"%>
+<%= f.submit "Logout"%> <br><br>
 
-<%= link_to "Restaurant",  restaurant_path%>
-<%= link_to " Create Review",  new_review_path%>
-<%= link_to " Restaurant Review",  reviews_path%>
+
+
+<%= link_to " Foods list",  foods_path%> &nbsp; &nbsp;
+<%= link_to " Restaurants",  restaurants_path%> &nbsp; &nbsp;
+<%= link_to " Restaurant Review",  reviews_path%> &nbsp; &nbsp;
+<%= link_to " Create Review",  new_review_path%> 
 <%end%>
