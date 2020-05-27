@@ -1,8 +1,50 @@
-<h3> Single Review</h3>
-    <h5>Restaurant Name : <%=link_to @review.restaurant.name, restaurant_path(@review.restaurant)%> </h5>
-    <h5>Reviewer : <%=@review.user.name%> </h5>
-    <h5>Date of Visit : <%=@review.date%> </h5>
-    <h5>Restaurant Rating : <%=@review.rating%> </h5>
-    <h5>Comment : <%=@review.comment%> </h5>
+<html>
+	<head>
+		<title>Yelppy_Rails_project</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+    <style>
 
-<%= link_to "Go Back to Restaurant Info",  restaurant_path(@review.restaurant)%> <br>
+    #banner {
+      background-image: url("https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80");
+    }
+
+    	a {
+		text-decoration: underline;
+		color: #19B5FE;
+	}
+
+		a:hover {
+			text-decoration: none;
+			color: #019be3;
+		}
+
+    </style>
+	</head>
+	<body>
+
+    	<div class="page-wrap">
+
+			<!-- Main -->
+			<section id="main">
+
+				<!-- Banner -->
+				<section id="banner">
+					<div class="inner">
+
+        <h2>Restaurant Name : <strong style = "color :green"><%=link_to @review.restaurant.name, restaurant_path(@review.restaurant)%></strong> </h2>
+        <h2>Reviewer : <%=@review.user.name%> </h2>
+        <h2>Date of Visit : <%=@review.date%> </h2>
+        <h2>Restaurant Rating : <%=@review.rating%> </h2>
+        <h2>Comment : <%=@review.comment%> </h2>
+
+
+            <%= link_to "Go Back to Restaurant Info",  restaurant_path(@review.restaurant)%> <br>
+
+            </div>
+            </section>
+            </section>
+            </div>
+	</body>
+</html>
