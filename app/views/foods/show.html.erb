@@ -1,6 +1,7 @@
-<h3> Single Food info</h3>
+<h3> Food Choices</h3>
     <h5>Food Name : <%=@food.name%> </h5>
     <p><%= @food.food_info%></p>
     <img src="<%=@food.image_url%>" alt="<%=@food.name%>"> <br>
 
-<%= link_to " Go Back to Restaurant Info",  restaurant_path(@food.restaurant)%> <br>
+<%= link_to " Go Back to Food lists",  foods_path%> &nbsp; &nbsp;
+<%= link_to " Go to Restaurant Information",  restaurant_path(@food.restaurant)%>

@@ -1,3 +1,5 @@
-<h3><%= @location.restaurant.name%> Information</h3>
+<h2><%= @location.restaurant.name%> Information</h2>
 <img src="<%=@location.restaurant.img_url%>" alt="<%=@location.restaurant.name%>"> <br>
-<h5> Address: <%=@location.address%> </h5>
+<h3> Address: <%=@location.address%> </h3><br>
+
+<h4><%= link_to " Go Back to Restaurant Info",  restaurant_path(@location.restaurant)%></h4> 
