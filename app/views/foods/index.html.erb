@@ -1,8 +1,5 @@
 <h3>Food list</h3>
 <% @foods.each do |food|%>
-<li>
     <h5>Food Name : <%=link_to food.name, food_path(food)%> </h5>
-    <h5>Food Detail infomation : <%=food.food_info%> </h5>
     <img src="<%=food.image_url%>" alt="<%=food.name%>">
-</li>
 <% end%>
