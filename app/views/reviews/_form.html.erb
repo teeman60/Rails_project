@@ -1,23 +1,22 @@
 <h3>Tell Us Your Experience about Restaurant</h3>
 <%=form_with model: @review do |f|%>
+    <%=f.text_field :user_id%>
     <%=f.label :Date_of_visit%>
     <%=f.date_field :date%> <br><br>
     <%=f.label :Restaurant_Name%>
     <%=f.collection_select :restaurant_id, @restautants, :id, :name%> <br><br>
-    <%=f.label :Location%>
-    <%=f.collection_select :location_id, @locations, :id, :address%> <br><br>
     <%=f.label :comment%> <br>
     <%=f.text_area :comment, cols: 50, rows: 10%> <br><br>
     <%=f.label :Rating%>
     <%=f.label 'Rating', '1' %>
-    <%=f.radio_button :rating, true %>
+    <%=f.radio_button :rating, 1 %>
     <%=f.label 'Rating', '2' %>
-    <%=f.radio_button :rating, false %>
+    <%=f.radio_button :rating, 2 %>
     <%=f.label 'Rating', '3' %>
-    <%=f.radio_button :rating, false %>
+    <%=f.radio_button :rating, 3 %>
     <%=f.label 'Rating', '4' %>
-    <%=f.radio_button :rating, false %>
+    <%=f.radio_button :rating, 4 %>
     <%=f.label 'Rating', '5' %>
-    <%=f.radio_button :rating, false %> <br><br>
+    <%=f.radio_button :rating, 5 %> <br><br>
 <%=f.submit%>
 <%end%>
