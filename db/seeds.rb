@@ -22,9 +22,9 @@ u4 = User.create(name: "Name 4", user_name: "User4", age: 17, password_digest: "
 u5 = User.create(name: "Name 5", user_name: "User5", age: 17, password_digest: "yugjubikuyyuytd")
 u6 = User.create(name: "Name 6", user_name: "User6", age: 17, password_digest: "yugjubikuyyuytd")
 
-r1 = Restaurant.create!(name: "World's Food Stories")
-r2 = Restaurant.create!(name: "Streetside Burger")
-r3 = Restaurant.create!(name: "Salads & Noodles")
+r1 = Restaurant.create!(name: "World's Food Stories", city:"Miami", img_url:"https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60")
+r2 = Restaurant.create!(name: "Streetside Burger", city:"San Francisco", img_url:"https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1934&q=80")
+r3 = Restaurant.create!(name: "Salads & Noodles", city:"Atlanta", img_url:"https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60")
 
 
 
@@ -45,15 +45,15 @@ f14 = Food.create(name:"Plate of noodle", food_info: "Plate of noodles with meat
 f15 = Food.create(name:"Vegan Buddha bowl", food_info: "Vegan Buddha bowl with chickpeas, courgette, sundried tomatoes and sprouts", image_url: "https://image.shutterstock.com/image-photo/vegan-buddha-bowl-chickpeas-courgette-600w-1021858819.jpg", restaurant: r3)
 
 
-l1 = Location.create(address: "Miami", restaurant: r1)
-l1 = Location.create(address: "San Francisco", restaurant: r2)
-l1 = Location.create(address: "Atlanta", restaurant: r3)
+l1 = Location.create(address: "1039 N Miami Ave, Miami, FL 33136", restaurant: r1)
+l2 = Location.create(address: "475 Pacific Ave, San Francisco, CA 94133", restaurant: r2)
+l3 = Location.create(address: "6405 Blue Stone Rd #205, Sandy Springs, GA 30328", restaurant: r3)
 
 
-Review.create(date: "01-15-2020", rating: 1, comment: "This is a good place to eat", user: u1, restaurant: r1)
-Review.create(date: "04-03-2020", rating: 1, comment: "I love their salad and brocolli. Super awesome", user: u2, restaurant: r2)
-Review.create(date: "03-25-2020", rating: 1, comment: "100% recommend. This is an amazing spot", user: u3, restaurant: r3)
-Review.create(date: "05-15-2020", rating: 1, comment: "I like to always come to this awesome place", user: u4, restaurant: r2)
+Review.create(date: "01-15-2020", rating: 5, comment: "This is a good place to eat", user: u1, restaurant: r1)
+Review.create(date: "04-03-2020", rating: 4, comment: "I love their salad and brocolli. Super awesome", user: u2, restaurant: r2)
+Review.create(date: "03-25-2020", rating: 5, comment: "100% recommend. This is an amazing spot", user: u3, restaurant: r3)
+Review.create(date: "05-15-2020", rating: 4, comment: "I like to always come to this awesome place", user: u4, restaurant: r2)
 
 
 

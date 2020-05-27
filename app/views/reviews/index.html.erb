@@ -1,11 +1,9 @@
-<h3>Reviews</h3>
+<h1>Restaurant Reviews</h1><br>
 <% @reviews.each do |review|%>
-<li>
-    <h5>Restaurant Name : <%=link_to review.restaurant.name, restaurant_path(review.restaurant)%> </h5>
-    <h5>User Name : <%=review.user.name%> </h5>
-    <h5>Review Date : <%=review.date%> </h5>
-    <h5>Restaurant Rating : <%=review.rating%> </h5>
-    <h5>Comment : <%=review.comment%> </h5>
-</li>
-<% end%>
+    <h3>Restaurant Name : <%=link_to review.restaurant.name, restaurant_path(review.restaurant)%> </h3>
+    <h4>Reviewer : <%=review.user.name%> </h4>
+    <h4>Review Date : <%=review.date%> </h4>
+    <h4>Restaurant Rating : <%=review.rating%> </h4>
+    <h4>Comment : <%=review.comment%> </h4><br>
+<% end%> 
 

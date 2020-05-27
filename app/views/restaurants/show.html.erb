@@ -1,6 +1,6 @@
 <h3>Restaurant's Info</h3>
 <h4>Location:</h4>
-<%= link_to @restaurant.location.address, location_path(@restaurant.location)%><br>
+<%= link_to @restaurant.city, location_path(@restaurant.location)%><br>
 <h4> Name:</h4>
 <%= @restaurant.name%><br>
 <h4> Average Rating:</h4>
@@ -14,4 +14,6 @@
 <h3>Comments about Restaurant</h3>
 <%@restaurant.reviews.each do |rev|%>
 <%= link_to rev.comment, review_path(rev)%> <br>
-<% end%>
+<% end%> <br>
+
+<h4><%= link_to "Home", user_path(@restaurant.users)%></h4>
