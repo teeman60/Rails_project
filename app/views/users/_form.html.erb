@@ -1,28 +1,94 @@
-<% if flash[:errors]%>
-    <% flash[:errors].each do |e| %>
-        <li style="color: purple">
-            <%= e %>
-        </li>
-        <%end%>
-<%end%>
+<!DOCTYPE HTML>
+    <html>
+        <head>
+            <title>Yelppy_Rails_project</title>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="stylesheet" href="assets/css/main.css" />
+            <style>
+                #banner {
+                background-image: url("https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80");
+                }
 
+                a {
+                text-decoration: underline;
+                color: #19B5FE;
+                }
 
-<%= form_with model: @user do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-<br>
-  <%= f.label :user_name %>
-  <%= f.text_field :user_name %>
-<br>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+                a:hover {
+                    text-decoration: none;
+                    color: #019be3;
+                }
 
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-<br>
-  <%= f.label :age %>
-  <%= f.number_field :age %>
-<br>
+                .flex-container {
+                    display: flex;
+                    justify-content: center;
+                    background-color: none;
+                }
 
-<%=f.submit%>
-<%end%>
+                .flex-container > div {
+                    background-color: #f1f1f1;
+                    margin: 10px;
+                    padding: 17px;
+                }
+
+                .btn {
+                    color: green;
+                    font-size: 1.25em;
+                    text-align: center;
+                    padding: 14px 40px;
+                    text-decoration: none;
+                }
+
+                .btn:hover {
+                background: #ddd;
+                color: black;
+                }
+
+                em {
+                    font-size: 1.15em;
+                }
+    
+                .center_box {
+
+                    margin-right: 150px;
+                    margin-left: 150px;
+                }
+        </style>
+        </head>
+        <body>
+            <% if flash[:errors]%>
+                <% flash[:errors].each do |e| %>
+                <li style="color: purple"><%= e %></li>
+                <%end%>
+            <%end%>
+
+            <!-- Main -->
+            <section id="main">
+                <%= form_with url: '/logout', method: "delete" do |f|%>
+                <div class="flex-container">
+                    <div><%= link_to " Foods list",  foods_path, class: "btn btn-inverse"%></div>
+                    <div><%= link_to " Restaurants",  restaurants_path, class: "btn btn-inverse"%></div>
+                    <div><%= link_to " Restaurant Review",  reviews_path, class: "btn btn-inverse"%></div>
+                    <div><%= link_to " Create Review",  new_review_path, class: "btn btn-inverse"%></div>&nbsp;&nbsp;&nbsp;
+                    <div> <strong><%= @user.name%></strong> &nbsp; <%= f.submit "Logout"%></div>
+                </div>
+                <%end%> 
+                <div class="center_box">
+                    <%= form_with model: @user do |f| %>
+                    <%= f.label :name %>
+                    <%= f.text_field :name %><br>
+                    <%= f.label :user_name %>
+                    <%= f.text_field :user_name %><br>
+                    <%= f.label :password %>
+                    <%= f.password_field :password %><br>
+                    <%= f.label :password_confirmation %>
+                    <%= f.password_field :password_confirmation %><br>
+                    <%= f.label :age %>
+                    <%= f.number_field :age %><br><br>
+                    <%=f.submit%>
+                    <%end%><br>
+                </div>
+            </section>
+        </body>
+    </html>
