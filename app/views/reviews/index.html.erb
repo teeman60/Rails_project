@@ -59,6 +59,23 @@
                 color: green;
             }
 
+            .f-container {
+                display: flex;
+                flex-flow: row wrap;
+            }
+
+            .f-container > div {
+                width: 635px;
+                margin: 12px;
+                text-align: center;
+                line-height: 75px;
+                font-size: 1em;
+            }
+            
+            .f-container > div > h3 {
+                color: green;
+            }
+
         </style>
 	</head>
     <body>
@@ -75,13 +92,17 @@
 		<!-- Main -->
             <div class="center_box">
                 <h1>Restaurant Reviews</h1><br>
+                <div class = "f-container">
                 <% @reviews.each do |review|%>
-                    <h3>Restaurant Name : <%=link_to review.restaurant.name, restaurant_path(review.restaurant)%> </h3>
-                    <h4>Reviewer : <%=review.user.name%> </h4>
-                    <h4>Review Date : <%=review.date%> </h4>
-                    <h4>Restaurant Rating : <%=review.rating%> </h4>
-                    <h4>Comment : <%=review.comment%> </h4><br>
+                    <div>
+                        <h3><%=link_to review.restaurant.name, restaurant_path(review.restaurant)%></h3>
+                        <h4>Reviewer : <%=review.user.name%> </h4>
+                        <h4>Review Date : <%=review.date%> </h4>
+                        <h4>Restaurant Rating : <%=review.rating%> </h4>
+                        <h4>Comment : <%=review.comment%> </h4><br>
+                    </div>
                 <% end%> 
+                </div>
             <h4 class = "gclor"><a href="#"> Top </a> &nbsp;&nbsp; | &nbsp; &nbsp;<%= link_to "Go Back to Restaurants List",  restaurants_path%></h4>
             </div>
         </section>

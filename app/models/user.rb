@@ -8,7 +8,10 @@ class User < ApplicationRecord
     validates :age, numericality: {only_integer: true, greater_than: 14}
 
     def most_like
-        self.reviews.max{ |a,b| a.rating <=> b.rating }
+        if self.reviews.length != 0
+        result = self.reviews.max{ |a,b| a.rating <=> b.rating }
+        end
+        result
     end
     
 end

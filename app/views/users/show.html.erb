@@ -30,6 +30,12 @@
 			em {
 				font-size: 1.15em;
 			}
+			h3 {
+				color: green;
+			}
+			.center_text {
+				text-align: center;
+			}
 		</style>
     </head>
 	<body>
@@ -57,50 +63,28 @@
 						</ul>
 					</div>
 				</section>
-
-				<!-- Gallery -->
-				<section id="galleries">
-					<!-- Photo Galleries -->
-					<div class="gallery">
-						<header class="special">
-							<h1>My Comments list</h1>
-						</header><br><br><br>
+				<br><h1 class = "center_text">My Comments list</h1><br>
+					<!-- Comments -->
+					<section id="contact">
+						<!-- Favorite Restaurant -->
+						<div class="social column">
+							<h2>Favorite Restaurant </h2>
+						    <h3>&nbsp; &nbsp; &nbsp; &nbsp;<%=link_to @user.most_like.restaurant.name, restaurant_path(@user.most_like.restaurant)%></h3> 
+						</div>
+						<!-- Restaurant Reviews -->
+						<div class="column">
 						<h2>Restaurant Reviews</h2>
                             <% @user.reviews.each do |review|%>
-                            <h3> <strong style = "color: green"> &nbsp; &nbsp; <%=review.restaurant.name%></strong> &nbsp; &nbsp; &nbsp; &nbsp;
-								<%=review.comment%></h3>
+                            	<h3>&nbsp; &nbsp; &nbsp; &nbsp;<%=review.restaurant.name%></h3> 
+								<li><%=review.comment%></li>
                             <% end%>
-						<div class="content">
-							<div class="media">
-								<a href="images/fulls/01.jpg"><img src="images/thumbs/01.jpg" alt="" title="This right here is a caption." /></a>
-							</div>
-							<div class="media">
-								<a href="images/fulls/05.jpg"><img src="images/thumbs/05.jpg" alt="" title="This right here is a caption." /></a>
-							</div>
-							<div class="media">
-								<a href="images/fulls/09.jpg"><img src="images/thumbs/09.jpg" alt="" title="This right here is a caption." /></a>
-							</div>
-							<div class="media">
-								<a href="images/fulls/02.jpg"><img src="images/thumbs/02.jpg" alt="" title="This right here is a caption." /></a>
-							</div>
-							<div class="media">
-								<a href="images/fulls/06.jpg"><img src="images/thumbs/06.jpg" alt="" title="This right here is a caption." /></a>
-							</div>
-							<div class="media">
-								<a href="images/fulls/10.jpg"><img src="images/thumbs/10.jpg" alt="" title="This right here is a caption." /></a>
-							</div>
-							<div class="media">
-								<a href="images/fulls/03.jpg"><img src="images/thumbs/03.jpg" alt="" title="This right here is a caption." /></a>
-							</div>
-							<div class="media">
-								<a href="images/fulls/07.jpg"><img src="images/thumbs/07.jpg" alt="" title="This right here is a caption." /></a>
-							</div>
 						</div>
-						<footer>
-							<a href="#" class="button big">TOP</a>
-						</footer>
+					</section>
+				<footer>
+					<a href="#" class="button big">TOP</a>
+				</footer>
 					</div>
-				</section>
-			</div>
-		</body>
-	</html>
+			</section>
+		</div>
+	</body>
+</html>
