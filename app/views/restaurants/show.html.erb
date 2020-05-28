@@ -1,19 +1,117 @@
-<h3>Restaurant's Info</h3>
-<h4>Location:</h4>
-<%= link_to @restaurant.city, location_path(@restaurant.location)%><br>
-<h4> Name:</h4>
-<%= @restaurant.name%><br>
-<h4> Average Rating:</h4>
-<%= @restaurant.reviews.average(:rating).to_i%><br>
-<br>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Yelppy_Rails_project</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+    	<style>
+			#banner {
+				background-image: url("https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80");
+			}
 
-<h4> Menu <h4>
-<% @restaurant.foods.each do |f|%>
-<%= link_to f.name, food_path(f)%><br>
-<%end%>
-<h3>Comments about Restaurant</h3>
-<%@restaurant.reviews.each do |rev|%>
-<%= link_to rev.comment, review_path(rev)%> <br>
-<% end%> <br>
+			a {
+				text-decoration: underline;
+				color: #19B5FE;
+			}
 
-<h4><%= link_to "Home", user_path(@restaurant.users)%></h4>
+			a:hover {
+				text-decoration: none;
+				color: #019be3;
+			}
+
+            .flex-container {
+                display: flex;
+                justify-content: center;
+                background-color: none;
+            }
+
+            .flex-container > div {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 17px;
+            }
+
+            .btn {
+                color: green;
+                font-size: 1.25em;
+                text-align: center;
+                padding: 14px 40px;
+                text-decoration: none;
+            }
+
+            .btn:hover {
+            background: #ddd;
+            color: black;
+            }
+
+            em {
+                font-size: 1.15em;
+            }
+  
+            .center_box {
+
+                margin-right: 150px;
+                margin-left: 150px;
+            }
+
+			h2, h3{
+                font-size: 2em;
+				color: green;
+				text-align: center;
+            }
+            h3 {
+                font-size: 1.35em;
+            }
+            
+    	</style>
+	</head>
+	<body>
+		<section id="main">
+            <%= form_with url: '/logout', method: "delete" do |f|%>
+            <div class="flex-container">
+                <div><%= link_to " Foods list",  foods_path, class: "btn btn-inverse"%></div>
+                <div><%= link_to " Restaurants",  restaurants_path, class: "btn btn-inverse"%></div>
+                <div><%= link_to " Restaurant Review",  reviews_path, class: "btn btn-inverse"%></div>
+                <div><%= link_to " Create Review",  new_review_path, class: "btn btn-inverse"%></div>&nbsp;&nbsp;&nbsp;
+                <div> <em><%= link_to @user.name, @user%></em> &nbsp; <%= f.submit "Logout"%></div>
+           </div>
+            <%end%> 
+		<!-- Main -->
+			<section id="main">
+
+				<!-- Banner -->
+				<section id="banner">
+					<div class="inner">
+
+                        <h2><%= @restaurant.name%></h2>
+                        <h4>Location : <%= link_to @restaurant.city, location_path(@restaurant.location)%> &nbsp; | &nbsp;
+                         Average Rating : <%= @restaurant.avg_rating%></h4><br>
+                        <br><br><h3> Menu <h4>
+                        <% @restaurant.foods.each do |f|%>
+                        <h4><%= link_to f.name, food_path(f)%></h4>
+                        <%end%>
+                    </div>
+            	</section>
+                <!-- Comments -->
+				<section id="contact">
+				    <!-- Most Recent 3 Comments -->
+					<div class="social column">
+                        <h3>Most Recent 3 Comments</h3>
+                        <%@restaurant.most_recent.each do |comment|%>
+                        <%= comment%> <br>
+                        <%end%>
+					</div>
+				    <!-- All Comments -->
+					<div class="column">
+                        <h3>All Comments</h3>
+                        <%@restaurant.reviews.each do |rev|%>
+                        <%= link_to rev.comment, review_path(rev)%> <br>
+                        <% end%> <br>
+					</div>
+				</section>
+            </section>
+        </div>
+        <br><h3><%= link_to "Go Back to Home", user_path(@restaurant.users)%></h3><br>
+	</body>
+</html>

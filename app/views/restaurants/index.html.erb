@@ -1,8 +1,101 @@
-<h3>Hi, <%= @user.name %>, welcome to your YELPPY app </h3>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Yelppy_Rails_project</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <style>
+            a {
+            text-decoration: underline;
+            color: #19B5FE;
+            }
 
-<h3>List Of Restaurants:</h3>
-<% @restaurants.each do |r|%>
-<%= link_to r.name, restaurant_path(r)%><br>
-<%end%>
+            a:hover {
+                text-decoration: none;
+                color: purple;
+            }
 
-<%= link_to " Go Back",  user_path(@user)%> <br>
+            .flex-container {
+                display: flex;
+                justify-content: center;
+                background-color: none;
+            }
+
+            .flex-container > div {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 17px;
+            }
+
+            .btn {
+                color: green;
+                font-size: 1.25em;
+                text-align: center;
+                padding: 14px 40px;
+                text-decoration: none;
+            }
+
+            .btn:hover {
+            background: #ddd;
+            color: black;
+            }
+
+            em {
+                font-size: 1.15em;
+            }
+  
+            .center_box {
+
+                margin-right: 150px;
+                margin-left: 150px;
+            }
+
+            h1 {
+                text-align: center;
+                background-color: DodgerBlue;
+            }
+            .gclor {
+                font-size: 1.15em;
+                color: green;
+            }
+            li>h3 {
+                font-size: 1.35em;
+                color: #019be3;
+            }
+
+            ul {
+                margin-right: 50px;
+                margin-left: 50px;
+
+            }
+
+        </style>
+	</head>
+    <body>
+		<section id="main">
+            <%= form_with url: '/logout', method: "delete" do |f|%>
+            <div class="flex-container">
+                <div><%= link_to " Foods list",  foods_path, class: "btn btn-inverse"%></div>
+                <div><%= link_to " Restaurants",  restaurants_path, class: "btn btn-inverse"%></div>
+                <div><%= link_to " Restaurant Review",  reviews_path, class: "btn btn-inverse"%></div>
+                <div><%= link_to " Create Review",  new_review_path, class: "btn btn-inverse"%></div>&nbsp;&nbsp;&nbsp;
+                <div> <em><%= link_to @user.name, @user%></em> &nbsp; <%= f.submit "Logout"%></div>
+           </div>
+            <%end%> 
+		<!-- Main -->
+            <div class="center_box">
+            <h1>Restaurants List</h1>
+            <ul>
+            <% @restaurants.each do |r|%>
+            <li>
+            <h3><%= link_to r.name, restaurant_path(r)%></h3><br>
+            </li>
+            <%end%>
+
+            </ul>
+            <h4 class = "gclor"><%= link_to " Go Back to Profile",  user_path(@user)%></h4> <br>
+            </div>
+        </section>
+    </body>
+</html>

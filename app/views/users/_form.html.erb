@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
     <html>
         <head>
             <title>Yelppy_Rails_project</title>
@@ -59,7 +59,7 @@
         <body>
             <% if flash[:errors]%>
                 <% flash[:errors].each do |e| %>
-                <li style="color: purple"><%= e %></li>
+                <li style="color: red"><%= e %></li>
                 <%end%>
             <%end%>
 
@@ -71,7 +71,7 @@
                     <div><%= link_to " Restaurants",  restaurants_path, class: "btn btn-inverse"%></div>
                     <div><%= link_to " Restaurant Review",  reviews_path, class: "btn btn-inverse"%></div>
                     <div><%= link_to " Create Review",  new_review_path, class: "btn btn-inverse"%></div>&nbsp;&nbsp;&nbsp;
-                    <div> <strong><%= @user.name%></strong> &nbsp; <%= f.submit "Logout"%></div>
+                    <div> &nbsp; <%= f.submit "Logout"%></div>
                 </div>
                 <%end%> 
                 <div class="center_box">

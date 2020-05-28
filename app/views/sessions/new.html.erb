@@ -1,10 +1,104 @@
-<%= form_with url: "/login" do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :user_name %>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Yelppy_Rails_project</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+      <style>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+        body {
+          background-image: url("https://images.unsplash.com/photo-1577169995124-d7be4d4d9df0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
+	      }
 
-  <%= f.submit "Log in" %>
-  Or <%= link_to(controller: 'users', action: 'new') { 'sign up' } %>
-<% end %>
+        input[type="submit"], button, a {
+        text-decoration: underline;
+        color: #19B5FE;
+        }
+
+        input[type="submit"], button, a:hover {
+            text-decoration: none;
+            color: #019be3;
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: center;
+            background-color: none;
+        }
+
+        .flex-container > div {
+            background-color: none;
+            margin: 10px;
+            padding: 17px;
+        }
+
+        .btn {
+            color: green;
+            font-size: 1.25em;
+            text-align: center;
+            padding: 14px 40px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+        background: #ddd;
+        color: black;
+        }
+
+        em {
+            font-size: 1.15em;
+        }
+  
+        .center_box {
+            margin-top: 250px;
+            margin-left: 500px;
+            margin-right: 500px;
+        }
+
+        .center_text{
+          text-align: center;
+        }
+
+        #main {
+          background-color: black;
+          color: gray;
+        }
+
+        input[type="submit"], button {
+          width: 120px;
+          color: white;
+          text-align: center;
+          font-size: 0.8em;
+        }
+
+      </style>
+	</head>
+  <body>
+    <% if flash[:errors]%>
+        <% flash[:errors].each do |e| %>
+        <li style="color: purple"><%= e %></li>
+        <%end%>
+    <%end%>
+
+		<!-- Main -->
+		<section id="main">
+      <div class="center_box">
+
+      <br><br><h1 class = "center_text">Are You Hungry Check Yelppy !!!</h1>
+      <%= form_with url: "/login" do |f| %>
+        <%= f.label :username %>
+        <%= f.text_field :user_name %> <br>
+      
+        <%= f.label :password %>
+        <%= f.password_field :password %> <br><br><br>
+      
+        <h4 class = "center_text">
+        <%= f.submit "Log in" %> &nbsp; &nbsp; &nbsp;
+        <button><%= link_to(controller: 'users', action: 'new') { 'sign up' } %> </button>
+        </h4>
+      <% end %>
+      </div><br><br>
+    </section>
+  </body>
+</html>

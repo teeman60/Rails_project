@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Yelppy_Rails_project</title>
@@ -49,12 +50,18 @@
                 margin-right: 150px;
                 margin-left: 150px;
             }
-    </style>
+
+            h1 {
+                text-align: center;
+                background-color: DodgerBlue;
+            }
+
+        </style>
 	</head>
     <body>
         <% if flash[:errors]%>
             <% flash[:errors].each do |e| %>
-            <li style="color: purple"><%= e %></li>
+            <li style="color: red"><%= e %></li>
             <%end%>
         <%end%>
 
@@ -70,7 +77,7 @@
            </div>
             <%end%> 
             <div class="center_box">
-                <h3>Tell Us Your Experience about Restaurant</h3>
+                <h1>Tell Us Your Experience about Restaurant</h1>
                 <%=form_with model: @review do |f|%>
                     <%f.text_field :user_id%>
                     <%=f.label :Date_of_visit%>
