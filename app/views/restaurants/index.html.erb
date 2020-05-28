@@ -85,18 +85,17 @@
             <%end%> 
 		<!-- Main -->
             <div class="center_box">
+            <h1>Restaurants List</h1>
+            <ul>
+            <% @restaurants.each do |r|%>
+            <li>
+            <h3><%= link_to r.name, restaurant_path(r)%></h3><br>
+            </li>
+            <%end%>
 
-<h1>Restaurants List</h1>
-<ul>
-<% @restaurants.each do |r|%>
-<li>
-<h3><%= link_to r.name, restaurant_path(r)%></h3><br>
-</li>
-<%end%>
-
-</ul>
-<h4 class = "gclor"><%= link_to " Go Back to Profile",  user_path(@user)%></h4> <br>
-</div>
+            </ul>
+            <h4 class = "gclor"><%= link_to " Go Back to Profile",  user_path(@user)%></h4> <br>
+            </div>
         </section>
     </body>
 </html>
