@@ -1,6 +1,15 @@
 class RestaurantsController < ApplicationController
 
     
+    def new
+        @restaurant = Restaurant.new
+    end
+
+    def def create
+        @restaurant = Restaurant.create(restaurant_params)
+        
+    end
+    
     def index
         @user = current_user
         @restaurants = Restaurant.all
@@ -11,6 +20,13 @@ class RestaurantsController < ApplicationController
         @restaurant = Restaurant.find(params[:id])
         @locations = Location.all
         @reviews = Review.all
+    end
+
+
+    private 
+
+    def restaurant_params
+        params.require(:restaurant).permit(:name, :city, :img_url)
     end
 
 

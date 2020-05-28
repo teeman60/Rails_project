@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
     end
 
     def create
-        @review = Review.new(review_params.merge(user_id: @user.id))
+        @review = Review.new(review_params).merge(user_id: @user.id)
         byebug
         if @review.valid?
             @review.save
