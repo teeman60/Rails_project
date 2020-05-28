@@ -1,4 +1,95 @@
-<h3> Restaurant Locations: </h3>
-<% @locations.each do |l|%>
-    <%= link_to l.address, location_path(l) %><br>
-<%end%>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Yelppy_Rails_project</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+    	<style>
+			#banner {
+				background-image: url("https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80");
+			}
+
+			a {
+				text-decoration: underline;
+				color: #19B5FE;
+			}
+
+			a:hover {
+				text-decoration: none;
+				color: #019be3;
+			}
+
+            .flex-container {
+                display: flex;
+                justify-content: center;
+                background-color: none;
+            }
+
+            .flex-container > div {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 17px;
+            }
+
+            .btn {
+                color: green;
+                font-size: 1.25em;
+                text-align: center;
+                padding: 14px 40px;
+                text-decoration: none;
+            }
+
+            .btn:hover {
+            background: #ddd;
+            color: black;
+            }
+
+            em {
+                font-size: 1.15em;
+            }
+  
+            .center_box {
+
+                margin-right: 150px;
+                margin-left: 150px;
+            }
+
+			h2, h3{
+                font-size: 2em;
+				color: green;
+				text-align: center;
+            }
+            h3 {
+                font-size: 1.35em;
+            }
+            
+    	</style>
+	</head>
+	<body>
+		<section id="main">
+            <%= form_with url: '/logout', method: "delete" do |f|%>
+            <div class="flex-container">
+                <div><%= link_to " Foods list",  foods_path, class: "btn btn-inverse"%></div>
+                <div><%= link_to " Restaurants",  restaurants_path, class: "btn btn-inverse"%></div>
+                <div><%= link_to " Restaurant Review",  reviews_path, class: "btn btn-inverse"%></div>
+                <div><%= link_to " Create Review",  new_review_path, class: "btn btn-inverse"%></div>&nbsp;&nbsp;&nbsp;
+                <div> <em><%= link_to @user.name, @user%></em> &nbsp; <%= f.submit "Logout"%></div>
+            </div>
+            <%end%> 
+		<!-- Main -->
+			<section id="main">
+				<!-- Banner -->
+				<section id="banner">
+					<div class="inner">
+                    <h3> Restaurant Locations: </h3>
+                    <% @locations.each do |l|%>
+                        <%= link_to l.address, location_path(l) %><br>
+                    <%end%>
+                    </div>
+            	</section>
+            </section>
+        </div>
+        <h3><%= link_to "Home", user_path(@restaurant.users)%></h3>
+	</body>
+</html>

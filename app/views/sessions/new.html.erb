@@ -1,10 +1,90 @@
-<%= form_with url: "/login" do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :user_name %>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Yelppy_Rails_project</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+      <style>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+        body {
+          background-color: #E7EFF2;
+	      }
 
-  <%= f.submit "Log in" %>
-  Or <%= link_to(controller: 'users', action: 'new') { 'sign up' } %>
-<% end %>
+        a {
+        text-decoration: underline;
+        color: #19B5FE;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: #019be3;
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: center;
+            background-color: none;
+        }
+
+        .flex-container > div {
+            background-color: #f1f1f1;
+            margin: 10px;
+            padding: 17px;
+        }
+
+        .btn {
+            color: green;
+            font-size: 1.25em;
+            text-align: center;
+            padding: 14px 40px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+        background: #ddd;
+        color: black;
+        }
+
+        em {
+            font-size: 1.15em;
+        }
+  
+        .center_box {
+            margin-top: 250px;
+            margin-left: 500px;
+            margin-right: 500px;
+        }
+
+        h1{
+          text-align: center;
+        }
+
+      </style>
+	</head>
+  <body>
+    <% if flash[:errors]%>
+        <% flash[:errors].each do |e| %>
+        <li style="color: purple"><%= e %></li>
+        <%end%>
+    <%end%>
+
+		<!-- Main -->
+		<section id="main">
+      <div class="center_box">
+
+      <h1>Are You Hungry Check Yelppy !!!</h1>
+      <%= form_with url: "/login" do |f| %>
+        <%= f.label :username %>
+        <%= f.text_field :user_name %> <br>
+      
+        <%= f.label :password %>
+        <%= f.password_field :password %> <br><br><br>
+      
+        <%= f.submit "Log in" %>
+        <%= link_to(controller: 'users', action: 'new') { 'sign up' } %> 
+      <% end %>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,10 +1,112 @@
-<h3>Food list</h3>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Yelppy_Rails_project</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+    	<style>
+			#banner {
+				background-color: #9EEEF3;
+			}
 
-<%= link_to " Go to Restaurants List",  restaurants_path%> <br>
+			a {
+				text-decoration: underline;
+				color: #19B5FE;
+			}
 
-<% @foods.each do |food|%>
-    <h5>Food Name : <%=link_to food.name, food_path(food)%> </h5>
-    <img src="<%=food.image_url%>" alt="<%=food.name%>">
-<% end%> <br><br>
+			a:hover {
+				text-decoration: none;
+				color: #019be3;
+			}
 
-<a href="#"> Top </a>
+            .flex-container {
+                display: flex;
+                justify-content: center;
+                background-color: none;
+            }
+
+            .flex-container > div {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 17px;
+            }
+
+            .btn {
+                color: green;
+                font-size: 1.25em;
+                text-align: center;
+                padding: 14px 40px;
+                text-decoration: none;
+            }
+
+            .btn:hover {
+            background: #ddd;
+            color: black;
+            }
+
+            em {
+                font-size: 1.15em;
+            }
+  
+            .center_box {
+
+                margin-right: 150px;
+                margin-left: 150px;
+            }
+
+            .f-container {
+                display: flex;
+                flex-flow: row wrap;
+            }
+            .f-container > div {
+                width: 800px;
+                margin: 10px;
+                text-align: center;
+                line-height: 75px;
+                font-size: 30px;
+            }
+            
+            h1 {
+                text-align: center;
+                background-color: DodgerBlue;
+            }
+
+            h4, h5 {
+                color: #6144A5;
+            }
+
+            h3 {
+                text-align: center;
+                color: green;
+            }
+
+    	</style>
+	</head>
+	<body>
+		<section id="main">
+            <%= form_with url: '/logout', method: "delete" do |f|%>
+            <div class="flex-container">
+                <div><%= link_to " Foods list",  foods_path, class: "btn"%></div>
+                <div><%= link_to " Restaurants",  restaurants_path, class: "btn"%></div>
+                <div><%= link_to " Restaurant Review",  reviews_path, class: "btn"%></div>
+                <div><%= link_to " Create Review",  new_review_path, class: "btn"%></div>&nbsp;&nbsp;&nbsp;
+                <div> <em><%= link_to @user.name, @user%></em> &nbsp; <%= f.submit "Logout"%></div>
+            </div>
+            <%end%> 
+		<!-- Main -->
+			<section id="main">
+                <h1>Foods List</h1><br>
+
+                <h4> &nbsp; &nbsp; &nbsp; &nbsp; <%= link_to " Go to Restaurants List",  restaurants_path%></h4>
+                <div class = "f-container">
+                <% @foods.each do |food|%>
+                    <div><img src="<%=food.image_url%>" alt="<%=food.name%>">
+                    <h5><%=link_to food.name, food_path(food)%></h5></div>
+                <% end%>
+                </div>
+            </section>
+        </div>
+        <h3><a href="#"> Top </a></h3><br><br>
+	</body>
+</html>
