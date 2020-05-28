@@ -1,22 +1,89 @@
-<% if flash[:errors]%>
-    <% flash[:errors].each do |e| %>
-        <li style="color: red">
-            <%= e %>
-        </li>
+<html>
+	<head>
+		<title>Yelppy_Rails_project</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <style>
+            a {
+            text-decoration: underline;
+            color: #19B5FE;
+            }
+
+            a:hover {
+                text-decoration: none;
+                color: #019be3;
+            }
+
+            .flex-container {
+                display: flex;
+                justify-content: center;
+                background-color: none;
+            }
+
+            .flex-container > div {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 17px;
+            }
+
+            .btn {
+                color: green;
+                font-size: 1.25em;
+                text-align: center;
+                padding: 14px 40px;
+                text-decoration: none;
+            }
+
+            .btn:hover {
+            background: #ddd;
+            color: black;
+            }
+
+            em {
+                font-size: 1.15em;
+            }
+  
+            .center_box {
+
+                margin-right: 150px;
+                margin-left: 150px;
+            }
+    </style>
+	</head>
+    <body>
+        <% if flash[:errors]%>
+            <% flash[:errors].each do |e| %>
+            <li style="color: purple"><%= e %></li>
+            <%end%>
         <%end%>
-<%end%>
 
-<h3>Tell Us Your Experience about Restaurant</h3>
-<%=form_with model: @review do |f|%>
-    <%f.text_field :user_id%>
-    <%=f.label :Date_of_visit%>
-    <%=f.date_field :date%> <br><br>
-    <%=f.label :Restaurant_Name%>
-    <%=f.collection_select :restaurant_id, @restautants, :id, :name%> <br><br>
-    <%=f.label :comment%> <br>
-    <%=f.text_area :comment, cols: 50, rows: 10%> <br><br>
-    <%=f.label :Rating%>
-    <%=f.number_field :rating%> <br><br>
-
-<%=f.submit%>
-<%end%>
+		<!-- Main -->
+		<section id="main">
+            <%= form_with url: '/logout', method: "delete" do |f|%>
+            <div class="flex-container">
+                <div><%= link_to " Foods list",  foods_path, class: "btn btn-inverse"%></div>
+                <div><%= link_to " Restaurants",  restaurants_path, class: "btn btn-inverse"%></div>
+                <div><%= link_to " Restaurant Review",  reviews_path, class: "btn btn-inverse"%></div>
+                <div><%= link_to " Create Review",  new_review_path, class: "btn btn-inverse"%></div>&nbsp;&nbsp;&nbsp;
+                <div> <em><%= @user.name%></em> &nbsp; <%= f.submit "Logout"%></div>
+           </div>
+            <%end%> 
+            <div class="center_box">
+                <h3>Tell Us Your Experience about Restaurant</h3>
+                <%=form_with model: @review do |f|%>
+                    <%f.text_field :user_id%>
+                    <%=f.label :Date_of_visit%>
+                    <%=f.date_field :date%> <br><br>
+                    <%=f.label :Restaurant_Name%>
+                    <%=f.collection_select :restaurant_id, @restautants, :id, :name%> <br>
+                    <%=f.label :comment%>
+                    <%=f.text_area :comment, cols: 50, rows: 7%> <br>
+                    <%=f.label :Rating%>
+                    <%=f.number_field :rating%> <br><br><br>
+                    <%=f.submit%>
+                <%end%> <br>
+            </div>
+      </section>
+  </body>
+</html>
