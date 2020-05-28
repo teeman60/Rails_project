@@ -14,6 +14,7 @@ class UsersController < ApplicationController
         
         if @user.valid?
             @user.save
+            session[:user_id] = @user.id
             redirect_to @user
         else
             flash[:errors] = @user.errors.full_messages
@@ -42,9 +43,7 @@ class UsersController < ApplicationController
         @user = current_user
     end
 
-    def current_user
-        @user = User.find(session[:user_id])
-    end
+   
 
     private
 

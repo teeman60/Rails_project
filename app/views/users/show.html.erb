@@ -17,7 +17,7 @@
 				padding: 20px;
 			}
 			.btn {
-				color: green;
+				color: red;
 				font-size: 1.25em;
 				text-align: center;
 				padding: 14px 45px;
@@ -43,7 +43,7 @@
                     <div><%= link_to " Restaurants",  restaurants_path, class: "btn btn-inverse"%></div>
                     <div><%= link_to " Restaurant Review",  reviews_path, class: "btn btn-inverse"%></div>
                     <div><%= link_to " Create Review",  new_review_path, class: "btn btn-inverse"%></div>&nbsp;&nbsp;&nbsp;
-                    <div> <em><%= @user.name%></em> &nbsp; <%= f.submit "Logout"%></div>
+                    <div> <em style="color:green"><%= @user.name%></em> &nbsp; <%= f.submit "Logout"%></div>
            		</div>
            		<%end%> 
 
