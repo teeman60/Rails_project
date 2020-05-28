@@ -86,19 +86,32 @@
 
                         <h2><%= @restaurant.name%></h2>
                         <h4>Location : <%= link_to @restaurant.city, location_path(@restaurant.location)%> &nbsp; | &nbsp;
-                         Average Rating : <%= @restaurant.reviews.average(:rating).to_i%></h4><br>
-                        <h3> Menu <h4>
+                         Average Rating : <%= @restaurant.avg_rating%></h4><br>
+                        <br><br><h3> Menu <h4>
                         <% @restaurant.foods.each do |f|%>
                         <h4><%= link_to f.name, food_path(f)%></h4>
                         <%end%>
-                        <h3>Comments about Restaurant</h3>
+                    </div>
+            	</section>
+                <!-- Comments -->
+				<section id="contact">
+				    <!-- Most Recent 3 Comments -->
+					<div class="social column">
+                        <h3>Most Recent 3 Comments</h3>
+                        <%@restaurant.most_recent.each do |comment|%>
+                        <%= comment%> <br>
+                        <%end%>
+					</div>
+				    <!-- All Comments -->
+					<div class="column">
+                        <h3>All Comments</h3>
                         <%@restaurant.reviews.each do |rev|%>
                         <%= link_to rev.comment, review_path(rev)%> <br>
                         <% end%> <br>
-                    </div>
-            	</section>
+					</div>
+				</section>
             </section>
         </div>
-        <h3><%= link_to "Home", user_path(@restaurant.users)%></h3>
+        <h3><%= link_to "Go Back to Home", user_path(@restaurant.users)%></h3>
 	</body>
 </html>
