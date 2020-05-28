@@ -8,7 +8,7 @@
       <style>
 
         body {
-          background-color: #E7EFF2;
+          background-image: url("https://images.unsplash.com/photo-1577169995124-d7be4d4d9df0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
 	      }
 
         a {
@@ -28,7 +28,7 @@
         }
 
         .flex-container > div {
-            background-color: #f1f1f1;
+            background-color: none;
             margin: 10px;
             padding: 17px;
         }
@@ -73,7 +73,7 @@
 		<section id="main">
       <div class="center_box">
 
-      <h1>Are You Hungry Check Yelppy !!!</h1>
+      <br><br><h1>Are You Hungry Check Yelppy !!!</h1>
       <%= form_with url: "/login" do |f| %>
         <%= f.label :username %>
         <%= f.text_field :user_name %> <br>
@@ -84,7 +84,7 @@
         <%= f.submit "Log in" %>
         <%= link_to(controller: 'users', action: 'new') { 'sign up' } %> 
       <% end %>
-      </div>
+      </div><br><br>
     </section>
   </body>
 </html>
