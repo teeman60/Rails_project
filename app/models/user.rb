@@ -10,8 +10,9 @@ class User < ApplicationRecord
     def most_like
         if self.reviews.length != 0
         result = self.reviews.max{ |a,b| a.rating <=> b.rating }
+        update = result.restaurant.name
         end
-        result
+        update
     end
     
 end
