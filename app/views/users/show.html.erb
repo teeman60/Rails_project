@@ -68,23 +68,21 @@
 					<section id="contact">
 						<!-- Favorite Restaurant -->
 						<div class="social column">
-							<h2>Favorite Restaurant </h2>
+							<h2>My Favorite Restaurant </h2>
 						    <h3>&nbsp; &nbsp; &nbsp; &nbsp;<%=link_to @user.most_like.restaurant.name, restaurant_path(@user.most_like.restaurant)%></h3> 
 						</div>
 						<!-- Restaurant Reviews -->
 						<div class="column">
-						<h2>Restaurant Reviews</h2>
+						<h2>My Restaurant Reviews</h2>
                             <% @user.reviews.each do |review|%>
                             	<h3>&nbsp; &nbsp; &nbsp; &nbsp;<%=review.restaurant.name%></h3> 
 								<li><%=review.comment%></li>
                             <% end%>
 						</div>
 					</section>
-				<footer>
-					<a href="#" class="button big">TOP</a>
-				</footer>
 					</div>
 			</section>
+					<br><h5 class = "center_text"><a href="#" class="button big">TOP</a></h5>
 		</div>
 	</body>
 </html>
