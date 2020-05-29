@@ -15,10 +15,10 @@ Location.destroy_all
 
 
 
-u1 = User.create(name: "Esther", user_name: "User1", age: 26, password_digest: "yugjubikuyyuytd")
-u2 = User.create(name: "Taiye", user_name: "User2", age: 17, password_digest: "yugjubikuyyuytd")
-u3 = User.create(name: "Steven", user_name: "User3", age: 32, password_digest: "yugjubikuyyuytd")
-u4 = User.create(name: "Charlotte", user_name: "User4", age: 45, password_digest: "yugjubikuyyuytd")
+u1 = User.create!(name:"Esther", user_name: "Userone", age: 26, password_digest: "$2a$12$2a8Zujj5HYblieSFXVohbegqWc.HSgOPNgeecTJjpS7QIf.yKLYLW")
+u2 = User.create!(name:"Taiye", user_name: "Usertwo", age: 17, password_digest: "$2a$12$2a8Zujj5HYblieSFXVohbegqWc.HSgOPNgeecTJjpS7QIf.yKLYLW")
+u3 = User.create!(name:"Steven", user_name: "Userthree", age: 32, password_digest: "$2a$12$2a8Zujj5HYblieSFXVohbegqWc.HSgOPNgeecTJjpS7QIf.yKLYLW")
+u4 = User.create!(name:"Charlotte", user_name: "Userfour", age: 45, password_digest: "$2a$12$2a8Zujj5HYblieSFXVohbegqWc.HSgOPNgeecTJjpS7QIf.yKLYLW")
 
 r1 = Restaurant.create!(name: "World's Food Stories", city:"Miami", img_url:"https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60")
 r2 = Restaurant.create!(name: "Streetside Burger", city:"San Francisco", img_url:"https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1934&q=80")
@@ -48,13 +48,13 @@ l2 = Location.create(address: "475 Pacific Ave, San Francisco, CA 94133", restau
 l3 = Location.create(address: "6405 Blue Stone Rd #205, Sandy Springs, GA 30328", restaurant: r3)
 
 
-Review.create(date: "01-15-2020", rating: 5, comment: "This is a good place to eat", user: u1, restaurant: r1)
-Review.create(date: "04-03-2020", rating: 4, comment: "I love their salad and brocolli. Super awesome", user: u2, restaurant: r2)
-Review.create(date: "03-25-2020", rating: 5, comment: "100% recommend. This is an amazing spot", user: u3, restaurant: r3)
-Review.create(date: "05-15-2020", rating: 4, comment: "I like to always come to this awesome place", user: u4, restaurant: r2)
-Review.create(date: "01-15-2020", rating: 5, comment: "This is a good place to eat", user: u4, restaurant: r1)
-Review.create(date: "04-03-2020", rating: 4, comment: "I love their salad and brocolli. Super awesome", user: u1, restaurant: r2)
-Review.create(date: "03-25-2020", rating: 5, comment: "100% recommend. This is an amazing spot", user: u2, restaurant: r3)
-Review.create(date: "05-15-2020", rating: 4, comment: "I like to always come to this awesome place", user: u3, restaurant: r2)
-Review.create(date: "05-15-2020", rating: 4, comment: "I like to always come to this awesome place", user: u3, restaurant: r1)
+Review.create!(date: "01-15-2020", rating: 5, comment: "This is a good place to eat", user: u1, restaurant: r1)
+Review.create!(date: "04-03-2020", rating: 4, comment: "I love their salad and brocolli. Super awesome", user: u2, restaurant: r2)
+Review.create!(date: "03-25-2020", rating: 5, comment: "100% recommend. This is an amazing spot", user: u3, restaurant: r3)
+Review.create!(date: "05-25-2020", rating: 4, comment: "I like to always come to this awesome place", user: u4, restaurant: r2)
+Review.create!(date: "02-15-2020", rating: 5, comment: "The owners are so friendly and helpful.", user: u4, restaurant: r1)
+Review.create!(date: "04-13-2020", rating: 4, comment: "Definitely give this place a try!", user: u1, restaurant: r2)
+Review.create!(date: "03-15-2020", rating: 5, comment: "Very nice people and the food is so delicious and authentic home cooking", user: u2, restaurant: r3)
+Review.create!(date: "05-05-2020", rating: 4, comment: "This place is amazing! The food is fresh and delicious...it tastes homemade!", user: u3, restaurant: r2)
+Review.create!(date: "05-10-2020", rating: 4, comment: "Very clean, very hygiene and very tasty !!", user: u3, restaurant: r1)
 

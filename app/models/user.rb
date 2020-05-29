@@ -5,7 +5,8 @@ class User < ApplicationRecord
     has_secure_password
 
     validates :name, uniqueness: true
-    validates :age, numericality: {only_integer: true, greater_than: 14}
+    validates :name, length: { minimum: 3 }
+    validates :age, numericality: {only_integer: true, greater_than: 14, less_than: 130}
 
     def most_like
         if self.reviews.length != 0
@@ -13,6 +14,5 @@ class User < ApplicationRecord
         update = result.restaurant.name
         end
         update
-    end
-    
+    end    
 end

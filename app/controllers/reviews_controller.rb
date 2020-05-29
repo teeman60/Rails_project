@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
     # skip_before_action :authenticated, only: [:new, :create]
     before_action :current_review, only: [:show, :edit, :update, :destory]
-    before_action :current_user, only: [:create]
+    before_action :current_user, only: [:create, :index]
 
 
     def index
@@ -10,19 +10,18 @@ class ReviewsController < ApplicationController
     
     def new
         @review = Review.new
-        @user = User.find(session[:user_id])
         @restautants = Restaurant.all 
         @locations = Location.all
     end
 
     def create
-        @review = Review.new(review_params.merge(user_id: @user.id))
+        review = Review.new(review_params.merge(user_id: @user.id))
         # byebug
-        if @review.valid?
-            @review.save
-            redirect_to @review
+        if review.valid?
+            review.save
+            redirect_to review
         else
-            flash[:errors] = @review.errors.full_messages
+            flash[:errors] = review.errors.full_messages
             redirect_to new_review_path
         end
     end
