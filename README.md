@@ -1,11 +1,25 @@
+# TYSTHER Application (Restaurant_Review)
+TYSTHER is allows you to search for restaurants list and thier menu and other information such as the rating and comments.
+Once the user has found matching Restaurant, they have the ability to writer each restaurant review (giving rating and comment) The reviews list can be provide reviewer infomation and most recent review and top rating as well.
+
+## Usage Guide
+
+### Initial Setup
+
+1. Fork and clone this repository to your local machine.
+2. CD into the directory where you cloned
+3. Type bundle install, rails db:migrate, rails db:seed
+4. In terminal, type in 'rails s' to start the app.
+5. Now you are available to see in your browser URL: http://localhost:3000/login
+
 # README
 
-This Yelp Clone will have the following functionalities: 
+This TYSTHER will have the following functionalities: 
 
 # USERS VALIDATION
-- Users can only open 1 account (name must be unique)
+- Users can only open 1 account (name must be provid and unique)
 
-- Users' age must be at least 15
+- Users' age must be at least 14 no more than 130
 
 - Users should not be able to login if they enter an incorrect password
 
@@ -13,6 +27,10 @@ This Yelp Clone will have the following functionalities:
 - Users can only leave one review per restaurant
 
 - Users can only leave one review after restaurant visit (date presenc)
+
+- Users can write a comment less than 300 characters more than 3 characters
+
+- Users can give a rating between 1 to 5
 
 # USERS
 - Users should be able to create an account / sign up (user_id, password)
