@@ -97,14 +97,14 @@
 				<section id="contact">
 				    <!-- Most Recent 3 Comments -->
 					<div class="social column">
-                        <h3>Most Recent 3 Comments</h3>
+                        <h3>Three Most Recent Reviews</h3>
                         <%@restaurant.most_recent.each do |comment|%>
                         <%= comment%> <br>
                         <%end%>
 					</div>
 				    <!-- All Comments -->
 					<div class="column">
-                        <h3>All Comments</h3>
+                        <h3>All Reviews</h3>
                         <%@restaurant.reviews.each do |rev|%>
                         <%= link_to rev.comment, review_path(rev)%> <br>
                         <% end%> <br>
