@@ -1,6 +1,6 @@
 # TYSTHER Application (Restaurant_Review)
-TYSTHER is allows you to search for restaurants list and thier menu and other information such as the rating and comments.
-Once the user has found matching Restaurant, they have the ability to writer each restaurant review (giving rating and comment) The reviews list can be provide reviewer infomation and most recent review and top rating as well.
+TYSTHER is a little like a Yelp clone that allows you to search for restaurants list, their menu and other information such as the rating and comments.
+Once the user has found a restaurant, they have the ability to view what menu they have, view the current ratings and reviews given by previous users and also give their own (rating and review). The reviews list provides reviewer infomation, most recent review as well as their top rating.
 
 ## Usage Guide
 
@@ -10,14 +10,14 @@ Once the user has found matching Restaurant, they have the ability to writer eac
 2. CD into the directory where you cloned
 3. Type bundle install, rails db:migrate, rails db:seed
 4. In terminal, type in 'rails s' to start the app.
-5. Now you are available to see in your browser URL: http://localhost:3000/login
+5. Now you have the login page available to view in your browser at URL: http://localhost:3000/login
 
 # README
 
-This TYSTHER will have the following functionalities: 
+The TYSTHER app has the following functionalities: 
 
 # USERS VALIDATION
-- Users can only open 1 account (name must be provid and unique)
+- Users can only open 1 account (name must be provided and must be unique)
 
 - Users' age must be at least 14 no more than 130
 
@@ -26,16 +26,16 @@ This TYSTHER will have the following functionalities:
 # REVIEW VALIDATION
 - Users can only leave one review per restaurant
 
-- Users can only leave one review after restaurant visit (date presenc)
+- Users can only leave their review after restaurant visit (date present)
 
-- Users can write a comment less than 300 characters more than 3 characters
+- Users' review must be more than 3 characters but less than 300 characters 
 
 - Users can give a rating between 1 to 5
 
-# USERS
+# USER'S VALIDATION
 - Users should be able to create an account / sign up (user_id, password)
 
-- Users should be have name, age, user_id, password
+- Users should be have name, age and password
 
 - Users should be authenticated upon subsequent login attempts
 
@@ -43,13 +43,13 @@ This TYSTHER will have the following functionalities:
 # FOOD
 - Users should be able to find restaurant menu
 
-- Food index page should have list of food
+- Food index page should have list of foods offered by a restaurant
 
-- Food index page should have links to a food's show page
+- Food index page should have links to a particular food's show page
 
 - Food show page display food info
 
-- Food show page should display food image
+- Food show page should display food images
 
 # LOCATION
 - A location should link to only one restaurant
