@@ -1,5 +1,5 @@
 # YELPPY Application (Restaurant_Review)
-TYSTHER is a little like a Yelp clone that allows you to search for restaurants list, their menu and other information such as the rating and comments.
+Yelppy is a little like a Yelp clone that allows you to search for restaurants list, their menu and other information such as the rating and comments.
 Once the user has found a restaurant, they have the ability to view what menu they have, view the current ratings and reviews given by previous users and also give their own (rating and review). The reviews list provides reviewer infomation, most recent review as well as their top rating.
 
 ## Usage Guide
@@ -14,7 +14,7 @@ Once the user has found a restaurant, they have the ability to view what menu th
 
 # README
 
-The TYSTHER app has the following functionalities: 
+The Yelppy app has the following functionalities: 
 
 # USERS VALIDATION
 - Users can only open 1 account (name must be provided and must be unique)
